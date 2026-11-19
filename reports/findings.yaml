@@ -1,0 +1,67 @@
+
+# MP185 findings --- fill in every value, keep every key.
+# The marking tool reads this file. Write null only where the comment says so.
+# Use the exact column names and group values from your data files.
+
+group_id: "G181"
+problem_id: "MP185"
+
+data_issues:
+  leaking_column:
+    present: true
+    column: duration_from_phone_bill
+
+  unit_mixup:
+    present: true
+    column: queue_wait_sec
+    group_value: Team Gamma
+    factor: 0.0166666667
+
+  sentinel_value:
+    present: true
+    column: hour
+    value: 9999
+    count: 59
+
+  duplicate_rows:
+    present: true
+    count: 29
+
+  stuck_sensor:
+    present: false
+    column: null
+    start_date: null
+    end_date: null
+
+  target_typos:
+    present: true
+    count: 10
+
+  spelling_variants:
+    present: false
+    column: null
+    true_levels: null
+
+tracking:
+  experiment_name: null
+  best_run_id: null
+  registered_model_name: null
+  champion_version: null
+
+monitoring:
+  psi:
+    queue_wait_sec: null
+    agent_exp_months: null
+    previous_calls: null
+    issue_count: null
+    hour: null
+    caller_age: null
+  most_drifted_feature: null
+  mae_by_group:
+    'Team Alpha': null
+    'Team Beta': null
+    'Team Gamma': null
+  worst_served_group: null
+  mae_v1_on_check: null
+  mae_v2_on_check: null
+  decision: null

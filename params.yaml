@@ -1,0 +1,12 @@
+data:
+  train_path: data/raw/train.csv
+  later_path: data/raw/later.csv
+  holdout_path: data/raw/holdout_features.csv
+features:
+  numeric: [queue_wait_sec, agent_exp_months, previous_calls, issue_count, hour, caller_age]
+  categorical: [language, team]
+target: handle_min
+model:
+  n_estimators: 100
+  max_depth: 6
+  random_state: 42

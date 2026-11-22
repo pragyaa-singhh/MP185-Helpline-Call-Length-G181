@@ -5,7 +5,6 @@ __pycache__/
 
 # MLflow generated files
 mlruns/
-mlflow.db
 mlflow.db-journal/
 
 # Generated cleaned data

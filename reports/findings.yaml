@@ -43,10 +43,14 @@ data_issues:
     true_levels: null
 
 tracking:
-  experiment_name: null
-  best_run_id: null
-  registered_model_name: null
-  champion_version: null
+  # Experiment: MP185-Helpline-Call-Length (7 runs, 3 comparison configurations)
+  # - RandomForest-50-4   (Run ID: 76e12513b60a4d06ad1a47cac7b02693, Status: FINISHED, MAE: 1.6297)
+  # - RandomForest-100-6  (Run ID: 8074381b5bed4969a08aa01ebde78c07, Status: FINISHED, MAE: 1.2792)
+  # - RandomForest-200-10 (Run ID: b8a73b359102478285949dc908c1f2d1, Status: FINISHED, MAE: 1.0929, Champion)
+  experiment_name: "MP185-Helpline-Call-Length"
+  best_run_id: "b8a73b359102478285949dc908c1f2d1"
+  registered_model_name: "MP185-Helpline-Call-Length"
+  champion_version: 2
 
 monitoring:
   psi:

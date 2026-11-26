@@ -1,17 +1,18 @@
+
 name: CI
 
 on:
   push:
-    branches: [ "**" ]
+    branches: ["**"]
   pull_request:
-    branches: [ "**" ]
+    branches: ["**"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: check out repository
         uses: actions/checkout@v4
 
       - name: Set up Python 3.12
@@ -24,6 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-    - name: Run test suite with pytest
-  run: |
-    python -m pytest -v
+      - name: Run test suite with pytest
+        run: |
+          python -m pytest -v
+

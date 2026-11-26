@@ -30,13 +30,28 @@ logger.addHandler(handler)
 logger.propagate = False
 
 
-# MLflow Setup
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
+from pathlib import Path
+import joblib
 
-MODEL_NAME = "MP185-Helpline-Call-Length"
-MODEL_URI = f"models:/{MODEL_NAME}@champion"
+# Model Setup
+ROOT = Path(__file__).resolve().parents[1]
+MODEL_PATH = ROOT / "models" / "model.joblib"
 
-model = mlflow.sklearn.load_model(MODEL_URI)
+try:
+    if MODEL_PATH.exists():
+        model = joblib.load(MODEL_PATH)
+    else:
+        import mlflow
+        mlflow.set_tracking_uri("sqlite:///mlflow.db")
+        MODEL_NAME = "MP185-Helpline-Call-Length"
+        MODEL_URI = f"models:/{MODEL_NAME}@champion"
+        model = mlflow.sklearn.load_model(MODEL_URI)
+except Exception:
+    import mlflow
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    MODEL_NAME = "MP185-Helpline-Call-Length"
+    MODEL_URI = f"models:/{MODEL_NAME}@champion"
+    model = mlflow.sklearn.load_model(MODEL_URI)
 
 app = FastAPI(title="MP185 Helpline API")
 

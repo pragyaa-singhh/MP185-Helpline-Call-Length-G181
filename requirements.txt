@@ -1,4 +1,3 @@
-
 pandas
 numpy
 scikit-learn
@@ -11,3 +10,4 @@ uvicorn
 pydantic
 pytest
 joblib
+httpx

@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+.git
+.gitignore
+.pytest_cache
+venv/
+.venv/
+data/
+reports/
+mlruns/
+mlflow.db
+mlflow.db-journal
+tests/
+.dvc/
+.dvcignore
